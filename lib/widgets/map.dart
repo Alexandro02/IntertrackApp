@@ -17,11 +17,13 @@ class InterMap extends StatefulWidget {
 }
 
 class _MapState extends State<InterMap> {
-  // Setting up MAP
+  // Setting up map API
   final String apiKey = "E5W2G5zaKeyf8sGShKMGTaUiYABLKNgp";
   final tomtomZoom = 18.0;
+  // Coordinates for map and real time updates.
   late double long;
   late double lat;
+  // Responsible for real time updates.
   late Timer timer;
 
   @override
@@ -29,7 +31,9 @@ class _MapState extends State<InterMap> {
     super.initState();
     getCurrentLocation();
     timer = Timer.periodic(
-        Duration(seconds: 10), (Timer t) => getCurrentLocation());
+      Duration(seconds: 10),
+      (Timer t) => getCurrentLocation(),
+    );
   }
 
   @override
