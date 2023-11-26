@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:http/http.dart' as http;
@@ -41,7 +43,8 @@ class _SpeechScreenState extends State<SpeechScreen> {
   bool _isListening = false;
   String _text = 'Presiona para hablar';
   double _confidence = 1.0;
-  bool _emailSent = false; // Variable de estado para realizar un seguimiento del correo enviado
+  // Variable de estado para realizar un seguimiento del correo enviado
+  bool _emailSent = false;
 
   @override
   void initState() {
@@ -115,7 +118,8 @@ class _SpeechScreenState extends State<SpeechScreen> {
       _speech.stop();
     }
   }
-//aqui esta lo del pop up por si quieren referencias 
+
+//aqui esta lo del pop up por si quieren referencias
   void _showEmailSentDialog() {
     showDialog(
       context: context,
