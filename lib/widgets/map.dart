@@ -1,5 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages, library_private_types_in_public_api
 
+import 'dart:async';
+
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
@@ -18,19 +20,30 @@ class _MapState extends State<InterMap> {
   // Setting up MAP
   final String apiKey = "E5W2G5zaKeyf8sGShKMGTaUiYABLKNgp";
   final tomtomZoom = 18.0;
-  late LatLng tomtomHQ;
+  late LatLng tomtomHQ = LatLng(13.7812, -12.5251);
+  late Timer timer;
 
   @override
   void initState() {
     super.initState();
     getCurrentLocation();
+    timer = Timer.periodic(
+        Duration(seconds: 10), (Timer t) => getCurrentLocation());
+  }
+
+  @override
+  void dispose() {
+    timer.cancel();
+    super.dispose();
   }
 
   //Se utiliza el método getCurrentLocation para obtener las coordenadas actuales del dispositivo
   Future<void> getCurrentLocation() async {
     try {
+      await Geolocator.checkPermission();
       Position position = await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.high);
+        desiredAccuracy: LocationAccuracy.high,
+      );
       setState(() {
         tomtomHQ = LatLng(position.latitude, position.longitude);
       });
