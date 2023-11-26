@@ -20,7 +20,8 @@ class _MapState extends State<InterMap> {
   // Setting up MAP
   final String apiKey = "E5W2G5zaKeyf8sGShKMGTaUiYABLKNgp";
   final tomtomZoom = 18.0;
-  late LatLng tomtomHQ = LatLng(13.7812, -12.5251);
+  late double long;
+  late double lat;
   late Timer timer;
 
   @override
@@ -45,7 +46,8 @@ class _MapState extends State<InterMap> {
         desiredAccuracy: LocationAccuracy.high,
       );
       setState(() {
-        tomtomHQ = LatLng(position.latitude, position.longitude);
+        lat = position.latitude;
+        long = position.longitude;
       });
     } catch (e) {
       print("Error: $e");
@@ -65,7 +67,7 @@ class _MapState extends State<InterMap> {
         children: <Widget>[
           FlutterMap(
             options: MapOptions(
-              initialCenter: tomtomHQ,
+              initialCenter: LatLng(lat, long),
               initialZoom: tomtomZoom,
             ),
             children: [
@@ -79,7 +81,7 @@ class _MapState extends State<InterMap> {
                   Marker(
                     width: 80.0,
                     height: 80.0,
-                    point: tomtomHQ,
+                    point: LatLng(lat, long),
                     child: Icon(
                       Icons.location_pin,
                       color: Colors.blue,
