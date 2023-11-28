@@ -1,0 +1,28 @@
+^C:\USERS\ESPINA24\DOCUMENTS\FACU\PROG\FLUTTER\INTERTRACKAPP\BUILD\WINDOWS\CMAKEFILES\2ED0D2597D93FB7CC63E28A9C0E32302\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\dev\flutter PROJECT_DIR=C:\Users\ESPINA24\Documents\facu\prog\flutter\IntertrackApp FLUTTER_ROOT=C:\dev\flutter FLUTTER_EPHEMERAL_DIR=C:\Users\ESPINA24\Documents\facu\prog\flutter\IntertrackApp\windows\flutter\ephemeral PROJECT_DIR=C:\Users\ESPINA24\Documents\facu\prog\flutter\IntertrackApp FLUTTER_TARGET=C:\Users\ESPINA24\Documents\facu\prog\flutter\IntertrackApp\lib\main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC9hNzk0Y2YyNjgxYzZjOWZlN2IyNjBlMGU4NGRlOTYyOThkYzljMThiLw== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=C:\Users\ESPINA24\Documents\facu\prog\flutter\IntertrackApp\.dart_tool\package_config.json C:/dev/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\ESPINA24\DOCUMENTS\FACU\PROG\FLUTTER\INTERTRACKAPP\BUILD\WINDOWS\CMAKEFILES\54BBACF95D3C7BF0773DD7BF2B443849\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\ESPINA24\DOCUMENTS\FACU\PROG\FLUTTER\INTERTRACKAPP\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/windows -BC:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/build/windows --check-stamp-file C:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/build/windows/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

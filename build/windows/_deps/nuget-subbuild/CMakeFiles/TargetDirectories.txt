@@ -1,0 +1,3 @@
+C:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/build/windows/_deps/nuget-subbuild/CMakeFiles/nuget-populate.dir
+C:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/build/windows/_deps/nuget-subbuild/CMakeFiles/ALL_BUILD.dir
+C:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/build/windows/_deps/nuget-subbuild/CMakeFiles/ZERO_CHECK.dir

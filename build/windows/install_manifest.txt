@@ -1,0 +1,13 @@
+C:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/build/windows/runner/Debug/data/icudtl.dat
+C:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/build/windows/runner/Debug/flutter_windows.dll
+C:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/build/windows/runner/Debug/geolocator_windows_plugin.dll
+C:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/build/windows/runner/Debug/data/flutter_assets/AssetManifest.bin
+C:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/build/windows/runner/Debug/data/flutter_assets/AssetManifest.bin.json
+C:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
+C:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
+C:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+C:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin
+C:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/build/windows/runner/Debug/data/flutter_assets/NOTICES
+C:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/build/windows/runner/Debug/data/flutter_assets/NOTICES.Z
+C:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/build/windows/runner/Debug/data/flutter_assets/packages/flutter_map/lib/assets/flutter_map_logo.png
+C:/Users/ESPINA24/Documents/facu/prog/flutter/IntertrackApp/build/windows/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag
