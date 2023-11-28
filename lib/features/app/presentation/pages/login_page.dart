@@ -1,9 +1,8 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:intertrack/models/user.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -13,34 +12,57 @@ class _LoginPageState extends State<LoginPage> {
   User? user;
 
   void login(String username, String password) async {
-    // Read the JSON data from the file.
-    final jsonData =
-        await DefaultAssetBundle.of(context).loadString('assets/userData.json');
+    // Simulación de autenticación.
+    if (username == "usuario" && password == "contraseña") {
+      // Usuario simulado. Puedes realizar la autenticación real aquí.
+      final foundUser = User(username: username, password: password, id: 1); // Ahora 'id' es un entero
 
-    // Decode the JSON data to a list of dynamic objects.
-    final List<dynamic> jsonList = jsonDecode(jsonData);
-
-    // Convert the list of dynamic objects to a list of maps.
-    final List<Map<String, dynamic>> usersData =
-        jsonList.map((json) => Map<String, dynamic>.from(json)).toList();
-
-    // Iterate through the usersData list and check if the username and password match
-    User? foundUser;
-    for (final userData in usersData) {
-      final user = User.fromJson(userData);
-      if (user.username == username && user.password == password) {
-        foundUser = user;
-        break;
-      }
-    }
-
-    if (foundUser != null) {
       setState(() {
         user = foundUser;
       });
+
+      // Muestra un diálogo de bienvenida con el nombre de usuario
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Bienvenido'),
+            content: Text('Inicio de sesión exitoso. ¡Bienvenido, $username!'),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop(); // Cierra el diálogo de bienvenida
+                },
+                child: const Text('OK'),
+              ),
+            ],
+          );
+        },
+      );
     } else {
-      // Show error message or use a snackbar to inform the user that the login failed
+      // se podria Mostrar un mensaje de error o utiliza un snackbar para informar al usuario que el inicio de sesión falló
     }
+  }
+
+  void logout() {
+    // Muestra un diálogo de despedida
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Nos vemos después'),
+          content: const Text('Cierre de sesión exitoso. ¡Hasta luego!'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Cierra el diálogo de despedida
+              },
+              child: const Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -99,7 +121,10 @@ class _LoginPageState extends State<LoginPage> {
               height: 25,
             ),
             ElevatedButton(
-              onPressed: () async {},
+              onPressed: () {
+                // Llama a la función de inicio de sesión
+                login("usuario", "contraseña");
+              },
               child: const Text('Ingresar'),
             ),
             Expanded(child: Container()),
@@ -107,9 +132,12 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.all(30),
               width: double.infinity,
               color: Colors.black26,
-              child: const Text(
-                "Cerrar sesión",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+              child: ElevatedButton(
+                onPressed: () {
+                  // Llama a la función de cierre de sesión
+                  logout();
+                },
+                child: const Text('Cerrar sesión'),
               ),
             )
           ],

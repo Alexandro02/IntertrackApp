@@ -1,5 +1,2 @@
-2023/11/24-11:06:44.080 27a0 Log #3: 2 ops saved to Table #4 OK
-2023/11/24-11:06:44.107 27a0 Archiving C:\Users\joser\AppData\Local\Temp\flutter_tools.eabdb949\flutter_tools_chrome_device.b88d383b\Default\Site Characteristics Database/000003.log: OK
-2023/11/24-11:06:44.108 27a0 Table #4: 2 entries OK
-2023/11/24-11:06:44.111 27a0 Archiving C:\Users\joser\AppData\Local\Temp\flutter_tools.eabdb949\flutter_tools_chrome_device.b88d383b\Default\Site Characteristics Database/MANIFEST-000001: OK
-2023/11/24-11:06:44.126 27a0 **** Repaired leveldb C:\Users\joser\AppData\Local\Temp\flutter_tools.eabdb949\flutter_tools_chrome_device.b88d383b\Default\Site Characteristics Database; recovered 1 files; 191 bytes. Some data may have been lost. ****
+2023/11/28-11:57:21.613 5eec Creating DB C:\Users\joser\AppData\Local\Temp\flutter_tools.2aeb33\flutter_tools_chrome_device.981800db\Default\Site Characteristics Database since it was missing.
+2023/11/28-11:57:21.684 5eec Reusing MANIFEST C:\Users\joser\AppData\Local\Temp\flutter_tools.2aeb33\flutter_tools_chrome_device.981800db\Default\Site Characteristics Database/MANIFEST-000001

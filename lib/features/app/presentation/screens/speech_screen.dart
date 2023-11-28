@@ -124,23 +124,23 @@ class _SpeechScreenState extends State<SpeechScreen> {
   }
 
 // //aqui esta lo del pop up por si quieren referencias
-//   void _showEmailSentDialog() {
-//     showDialog(
-//       context: context,
-//       builder: (BuildContext context) {
-//         return AlertDialog(
-//           title: Text("Correo Enviado"),
-//           content: Text("Su correo se envió con éxito."),
-//           actions: <Widget>[
-//             TextButton(
-//               child: Text("Aceptar"),
-//               onPressed: () {
-//                 Navigator.of(context).pop();
-//               },
-//             ),
-//           ],
-//         );
-//       },
-//     );
-//   }
+  void _showEmailSentDialog() {
+     showDialog(
+       context: context,
+       builder: (BuildContext context) {
+         return AlertDialog(
+           title: Text("Correo Enviado"),
+           content: Text("Su correo se envió con éxito."),
+           actions: <Widget>[
+             TextButton(
+               child: Text("Aceptar"),
+               onPressed: () {
+                 Navigator.of(context).pop();
+               },
+             ),
+           ],
+         );
+       },
+     );
+   }
 }
