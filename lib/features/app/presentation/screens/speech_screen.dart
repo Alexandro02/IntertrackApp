@@ -119,7 +119,7 @@ class _SpeechScreenState extends State<SpeechScreen> {
     }
   }
 
-//aqui esta lo del pop up por si quieren referencias
+// Email sent popup
   void _showEmailSentDialog() {
     showDialog(
       context: context,

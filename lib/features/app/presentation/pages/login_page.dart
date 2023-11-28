@@ -22,6 +22,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Image.network(
                   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO2tWaSDPUixIf_4hByRtZ_tQxU435aTJ1v4GpZrbeY_tWn5JeJdUDAqX3I_UQcBEnaAE&usqp=CAU'),
             ),
+            // Login start
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               child: const Text(

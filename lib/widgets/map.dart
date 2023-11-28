@@ -25,6 +25,7 @@ class _MapState extends State<InterMap> {
 
   @override
   void initState() {
+    // Update the timer each 10 seconds
     super.initState();
     getCurrentLocation();
     timer = Timer.periodic(

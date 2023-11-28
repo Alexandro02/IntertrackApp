@@ -29,6 +29,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void dispose() {
+    // Input controllers
     _usernameController.dispose();
     _passwordController.dispose();
     _emailController.dispose();

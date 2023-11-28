@@ -18,6 +18,7 @@ class UserPage extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
+                  // Open voice rec screen
                   builder: (context) => SpeechScreen(),
                 ),
               );

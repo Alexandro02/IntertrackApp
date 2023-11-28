@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
         },
       ),
     );
-
+    // Error handling
     response.statusCode == 200
         ? print('Correo electrónico enviado con éxito')
         : print('Error al enviar el correo electrónico');

@@ -1,4 +1,5 @@
 class User {
+  // Users credentials
   final int id;
   final String username;
   final String password;

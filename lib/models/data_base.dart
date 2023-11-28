@@ -8,6 +8,7 @@ class Database {
     await rootBundle.loadString('assets/userData.json');
   }
 
+  // Get all users from db
   Future<List<User>> getUsers() async {
     final file = File('assets/userData.json');
     final contents = await file.readAsString();
@@ -21,6 +22,7 @@ class Database {
         .toList();
   }
 
+  // Add user to db
   Future<void> addUser(User user) async {
     final file = File('assets/userData.json');
     final contents = await file.readAsString();
