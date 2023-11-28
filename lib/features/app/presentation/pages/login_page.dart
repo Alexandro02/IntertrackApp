@@ -1,4 +1,6 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:intertrack/models/user.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -8,6 +10,39 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  User? user;
+
+  void login(String username, String password) async {
+    // Read the JSON data from the file.
+    final jsonData =
+        await DefaultAssetBundle.of(context).loadString('assets/userData.json');
+
+    // Decode the JSON data to a list of dynamic objects.
+    final List<dynamic> jsonList = jsonDecode(jsonData);
+
+    // Convert the list of dynamic objects to a list of maps.
+    final List<Map<String, dynamic>> usersData =
+        jsonList.map((json) => Map<String, dynamic>.from(json)).toList();
+
+    // Iterate through the usersData list and check if the username and password match
+    User? foundUser;
+    for (final userData in usersData) {
+      final user = User.fromJson(userData);
+      if (user.username == username && user.password == password) {
+        foundUser = user;
+        break;
+      }
+    }
+
+    if (foundUser != null) {
+      setState(() {
+        user = foundUser;
+      });
+    } else {
+      // Show error message or use a snackbar to inform the user that the login failed
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

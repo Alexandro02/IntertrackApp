@@ -1,5 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:intertrack/widgets/custom_pop_up.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:http/http.dart' as http;
@@ -106,7 +107,10 @@ class _SpeechScreenState extends State<SpeechScreen> {
             if (_text.contains('emergencia') || _text.contains('emergency')) {
               if (!_emailSent) {
                 sendEmail();
-                _showEmailSentDialog();
+                CustomPopUp(
+                    dialogText: "Correo electronico enviado con éxito!",
+                    dialogTitle: "Correo Enviado",
+                    buttonText: "Aceptar");
                 _emailSent = true;
               }
             }
@@ -119,24 +123,24 @@ class _SpeechScreenState extends State<SpeechScreen> {
     }
   }
 
-//aqui esta lo del pop up por si quieren referencias
-  void _showEmailSentDialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text("Correo Enviado"),
-          content: Text("Su correo se envió con éxito."),
-          actions: <Widget>[
-            TextButton(
-              child: Text("Aceptar"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
+// //aqui esta lo del pop up por si quieren referencias
+//   void _showEmailSentDialog() {
+//     showDialog(
+//       context: context,
+//       builder: (BuildContext context) {
+//         return AlertDialog(
+//           title: Text("Correo Enviado"),
+//           content: Text("Su correo se envió con éxito."),
+//           actions: <Widget>[
+//             TextButton(
+//               child: Text("Aceptar"),
+//               onPressed: () {
+//                 Navigator.of(context).pop();
+//               },
+//             ),
+//           ],
+//         );
+//       },
+//     );
+//   }
 }

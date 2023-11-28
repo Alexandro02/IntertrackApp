@@ -1,21 +1,10 @@
+import 'package:intertrack/widgets/custom_pop_up.dart';
 import 'package:intertrack/widgets/map.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'dart:convert';
 
-import 'package:geolocator/geolocator.dart';
-
 class HomePage extends StatelessWidget {
-  // Testing geolocator.
-  Future<void> getPosition() async {
-    await Geolocator.checkPermission();
-    await Geolocator.requestPermission();
-
-    Position position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high);
-    print("Current location ${position.toString()}");
-  }
-
   // API for email sending.
   Future<void> sendNotification() async {
     const serviceId = 'service_aeszbsq';
@@ -54,8 +43,10 @@ class HomePage extends StatelessWidget {
         onPressed: () async {
           // sendNotification is in charge of sending a notification when the button is pressed.
           await sendNotification();
-          // TODO: GOT TO FIX GETTING LOCATION
-          // await getPosition();
+          CustomPopUp(
+              dialogTitle: "Correo enviado",
+              dialogText: "El correo electrónico ha sido enviado exitosamente!",
+              buttonText: "Aceptar");
         },
         child: Icon(Icons.notification_add),
       ),

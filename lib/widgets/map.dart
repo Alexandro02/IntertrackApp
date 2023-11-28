@@ -1,5 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages, library_private_types_in_public_api
 
+import 'dart:async';
+
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
@@ -15,24 +17,41 @@ class InterMap extends StatefulWidget {
 }
 
 class _MapState extends State<InterMap> {
-  // Setting up MAP
+  // Setting up map API
   final String apiKey = "E5W2G5zaKeyf8sGShKMGTaUiYABLKNgp";
   final tomtomZoom = 18.0;
-  late LatLng tomtomHQ;
+  // Coordinates for map and real time updates.
+  late double long;
+  late double lat;
+  // Responsible for real time updates.
+  late Timer timer;
 
   @override
   void initState() {
     super.initState();
     getCurrentLocation();
+    timer = Timer.periodic(
+      Duration(seconds: 10),
+      (Timer t) => getCurrentLocation(),
+    );
+  }
+
+  @override
+  void dispose() {
+    timer.cancel();
+    super.dispose();
   }
 
   //Se utiliza el método getCurrentLocation para obtener las coordenadas actuales del dispositivo
   Future<void> getCurrentLocation() async {
     try {
+      await Geolocator.checkPermission();
       Position position = await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.high);
+        desiredAccuracy: LocationAccuracy.high,
+      );
       setState(() {
-        tomtomHQ = LatLng(position.latitude, position.longitude);
+        lat = position.latitude;
+        long = position.longitude;
       });
     } catch (e) {
       print("Error: $e");
@@ -52,7 +71,7 @@ class _MapState extends State<InterMap> {
         children: <Widget>[
           FlutterMap(
             options: MapOptions(
-              initialCenter: tomtomHQ,
+              initialCenter: LatLng(lat, long),
               initialZoom: tomtomZoom,
             ),
             children: [
@@ -66,7 +85,7 @@ class _MapState extends State<InterMap> {
                   Marker(
                     width: 80.0,
                     height: 80.0,
-                    point: tomtomHQ,
+                    point: LatLng(lat, long),
                     child: Icon(
                       Icons.location_pin,
                       color: Colors.blue,
