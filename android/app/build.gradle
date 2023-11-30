@@ -1,7 +1,9 @@
+// Algunos errores fueron resueltos moviendo el formato de sintaxis para declarar plugins, de esta forma:
 plugins {
     id "com.android.application"
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services"
 }
 
 def localProperties = new Properties()
@@ -22,10 +24,10 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
-apply plugin: "com.google.gms.google-services"
 
 android {
     namespace "com.example.intertrack"
+    // Se verificó también que el compileSdkVersion estuviera bien de acuerdo a las necesidades
     compileSdkVersion 33
     ndkVersion flutter.ndkVersion
 
@@ -51,16 +53,15 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.intertrack"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
+        // Tambien nos cersioramos de que el minSdkVersion fuera la version minima con la que estariamos trabajando.
         minSdkVersion 21
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
 
+    // Integracion de la API tomtom para el mapa
     buildTypes.configureEach {
         buildConfigField("String", "TOMTOM_API_KEY", "\"$tomtomApiKey\"")
     }
@@ -70,7 +71,7 @@ flutter {
     source '../..'
 }
 
+// Integracion de la API tomtom para el mapa
 dependencies {
     implementation("com.tomtom.sdk.maps:map-display:0.33.1")
-    
 }

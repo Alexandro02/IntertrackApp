@@ -1,14 +1,15 @@
 import 'package:intertrack/features/app/presentation/screens/speech_screen.dart';
 import 'package:flutter/material.dart';
+
 void main() {
- runApp(const MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
- const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
- @override
- Widget build(BuildContext context) {
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
       title: 'BRAKE Popup',
       theme: ThemeData(
@@ -16,13 +17,13 @@ class MyApp extends StatelessWidget {
       ),
       home: const UserPage(),
     );
- }
+  }
 }
 
 class UserPage extends StatelessWidget {
- const UserPage({Key? key}) : super(key: key);
- @override
- Widget build(BuildContext context) {
+  const UserPage({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Column(
@@ -36,9 +37,9 @@ class UserPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(
-                 MaterialPageRoute(
+                  MaterialPageRoute(
                     builder: (context) => SpeechScreen(),
-                 ),
+                  ),
                 );
               },
               child: Text("Abrir Pantalla de Reconocimiento de Voz"),
@@ -47,27 +48,27 @@ class UserPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 showDialog(
-                 context: context,
-                 builder: (BuildContext context) {
+                  context: context,
+                  builder: (BuildContext context) {
                     return AlertDialog(
-                      title: const Text('Se a cortado el suministro del tanque en el coche con exito!!'),
+                      title: const Text('Unidad detenida con éxito'),
                       actions: [
                         TextButton(
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
-                          child: const Text('!Entendido¡'),
+                          child: const Text('¡Entendido!'),
                         ),
                       ],
                     );
-                 },
+                  },
                 );
               },
-              child: const Text('BRAKE'),
+              child: const Text('Parar unidad'),
             ),
           ],
         ),
       ),
     );
- }
+  }
 }

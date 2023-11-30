@@ -8,8 +8,10 @@ buildscript {
     }
 }
 
+// Repositorios necesarios para la implementacion de la API de tomtom para el mapa.
 allprojects {
     repositories {
+        google()
         mavenCentral()
     }
 }
@@ -25,5 +27,3 @@ subprojects {
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
-
-apply plugin: 'com.google.gms.google-services'
